@@ -93,17 +93,16 @@ section {
 }
 
 .home {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url(../images/home-img.jpg);
-    /* filter: drop-shadow(0 0 5px #fff); */
-    background-size: 50%;
-    background-position: right;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    justify-items: center;
+    gap: 1.5rem;
+}
+
+.home .home-img img {
+    width: 85%;
+    border-radius: 1.8rem;
 }
 
 .slide {
@@ -304,7 +303,7 @@ header.sticky {
 
 .services-content .box p {
     color: var(--second-color);
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
 }
@@ -412,7 +411,7 @@ header.sticky {
 
 .portfolio .portfolio-content .row .layer p {
     color: var(--second-bg-color);
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.8;
 }
 
@@ -552,16 +551,25 @@ header.sticky {
     :root {
         --big-font: 4rem;
         --h2-font: 2.5rem;
-        --p-font: 1rem;
+        --p-font: 1.4rem;
         transition: 1s;
-    }
-
-    .home {
-        height: 87vh;
     }
 }
 
 @media (max-width: 920px) {
+    .home {
+        grid-template-columns: 1fr;
+    }
+
+    .home .home-img {
+        text-align: center;
+    }
+    .home .home-img img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
     .about {
         grid-template-columns: 1fr;
     }
